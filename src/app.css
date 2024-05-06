@@ -16,6 +16,29 @@ p {
     padding: 0;
 }
 
+::-webkit-scrollbar {
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: hsl(9, 100%, 64%);
+
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+
+    box-shadow: 3px 3px 0px black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: hwb(9 28% 15%);
+}
+
 :root {
     --normal: #acb4b7;
 	--fire: #ffb68d;
