@@ -1,0 +1,1 @@
+A pokedex built with Sveltekit and PokeAPI v2.
