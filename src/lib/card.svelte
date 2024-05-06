@@ -36,6 +36,7 @@
     #info {
         display: flex;
         flex-direction: column;
+        align-items: center;
 
         width: 45%;
         height: 90%;
@@ -54,6 +55,7 @@
         #info {
             width: 90%;
             height: 45%;
+            margin: 0;
         }
     }
 </style>

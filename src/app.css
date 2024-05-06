@@ -11,6 +11,7 @@ body {
 
 p {
     font-family: "pokemon_font";
+    font-size: var(--font);
     margin: 0;
     padding: 0;
 }
@@ -20,4 +21,15 @@ p {
     --fire: #FF9441;
     --water: #8BC5CD;
     --grass: #A4D541;
+
+
+    --heading-font: 1.3rem;
+    --font: 0.9rem;
+}
+
+@media only screen and (max-width: 40em) {
+    :root {
+        --heading-font: 1rem;
+        --font: 0.6rem;
+    }
 }

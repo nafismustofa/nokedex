@@ -1,4 +1,5 @@
 <script>
+    import Type from "./type.svelte";
     import VerticalLine from "./verticalLine.svelte";
 </script>
 
@@ -8,12 +9,11 @@
         <p id="id">#000</p>
     </div>
 
-    <VerticalLine/>
+    <VerticalLine />
 
     <div id="type">
-        <div class="type_box">
-            <p>Fire</p>
-        </div>
+        <Type type="Fire"/>
+        <Type type="Flying"/>
     </div>
 
 </div>
@@ -21,13 +21,14 @@
 <style>
     #title {
         width: 100%;
-        height: 4rem;
         display: flex;
         align-items: center;
     }
 
     #pokemon {
         display: flex;
+        align-items: end;
+        justify-content: center;
     }
 
     #type {
@@ -36,26 +37,20 @@
     }
 
     #name {
-        font-size: 1.3rem;
+        font-size: var(--heading-font);
         font-weight: bold;
     }
 
-    #id {
-        margin-top: 0.4rem;
-    }
-
-    .type_box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        background-color: var(--fire);
-
-        width: 200%;
-    }
-
     @media only screen and (max-width: 40em) {
-        
+        #title {
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #type {
+            flex-direction: row;
+            margin-block: 0.5rem;
+        }
     }
     
 </style>
