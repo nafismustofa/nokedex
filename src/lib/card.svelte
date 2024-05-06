@@ -2,23 +2,31 @@
     import Sprite from "$lib//sprite.svelte";
     import Abilities from "./abilities.svelte";
     import HorizontalLine from "./horizontalLine.svelte";
-    import Search from "./search.svelte";
     import Stats from "./stats.svelte";
     import Title from "./title.svelte";
+
+    import { pokemon_data } from "$lib/fetchData.js";
+
+    let data;
+    
+    pokemon_data.subscribe(value => {
+        data =  value;
+    });
 </script>
 
 <div id="card">
-    <Sprite/>
+    {#if data != null}
+        <Sprite/>
 
-    <div id="info">
-        <Title/>
-        <HorizontalLine/>
-        <Stats/>
-        <HorizontalLine/>
-        <Abilities/>
-        <HorizontalLine/>
-        <Search/>
-    </div>
+        <div id="info">
+            <Title/>
+            <HorizontalLine/>
+            <Stats/>
+            <HorizontalLine/>
+            <Abilities/>
+            <HorizontalLine/>
+        </div>
+    {/if}
 </div>
 
 <style>
@@ -52,7 +60,7 @@
 
     @media only screen and (max-width: 40em) {
         #card {
-            width: 85dvw;
+            width: 80dvw;
             aspect-ratio: 1/1.90;
 
             display: flex;

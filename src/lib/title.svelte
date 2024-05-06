@@ -1,19 +1,29 @@
 <script>
     import Type from "./type.svelte";
     import VerticalLine from "./verticalLine.svelte";
+
+    import { pokemon_data } from "$lib/fetchData.js";
+    import { formatText } from "$lib/formatText.js";
+
+    let data;
+    
+    pokemon_data.subscribe(value => {
+        data =  value;
+    });
 </script>
 
 <div id="title">
     <div id="pokemon">
-        <p id="name">Charizard</p>
-        <p id="id">#000</p>
+        <p id="name">{formatText(data.name)}</p>
+        <p id="id">#{data.id}</p>
     </div>
 
     <VerticalLine />
 
     <div id="type">
-        <Type type="Fire"/>
-        <Type type="Flying"/>
+        {#each data.types as t}
+            <Type type={formatText(t.type.name)}/>
+        {/each}
     </div>
 
 </div>

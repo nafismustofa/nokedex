@@ -17,11 +17,24 @@ p {
 }
 
 :root {
-    --electric: #F6E652;
-    --fire: #FF9441;
-    --water: #8BC5CD;
-    --grass: #A4D541;
-
+    --normal: #acb4b7;
+	--fire: #ffb68d;
+	--water: #8cade0;
+	--electric: #f6dd83;
+	--grass: #94cb91;
+	--ice: #9cdacd;
+	--fighting: #d98698;
+	--poison: #bf99d4;
+	--ground: #e19f87;
+	--flying: #aebde4;
+	--psychic: #fa9c9d;
+	--bug: #add080;
+	--rock: #d3c8aa;
+	--ghost: #8e97c0;
+	--dragon: #7a99cf;
+	--dark: #908d96;
+	--steel: #90acb8;
+	--fairy: #f2adec;
 
     --header-font: 1.3rem;
     --font: 0.9rem;

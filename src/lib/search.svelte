@@ -1,10 +1,13 @@
 <script>
-
+    import { fetchData } from "$lib/fetchData.js";
+    let pokemon_name;
 </script>
 
 <div id="search">
-    <input id="search_bar" type="text" placeholder="Enter Pokemon name..."/>
-    <div id="search_button">
+    <input id="search_bar" type="text" placeholder="Enter Pokemon name..." bind:this={pokemon_name}/>
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div id="search_button" on:click={fetchData(pokemon_name.value)}>
         <img src="/icons/search.svg" alt="serach"/>
     </div>
 </div>
@@ -13,6 +16,7 @@
     #search {
         display: flex;
         align-items: center;
+        justify-content: center;
         width: 100%;
     }
 

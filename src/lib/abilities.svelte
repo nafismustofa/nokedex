@@ -1,9 +1,20 @@
+<script>
+    import { pokemon_data } from "$lib/fetchData.js";
+    import { formatText } from "$lib/formatText.js";
+    let data;
+
+    pokemon_data.subscribe(value => {
+        data =  value;
+    });
+</script>
+
 <div id="abilities">
     <p id="header">Abilities</p>
 
     <div id="pokemon-abilities">
-        <p>Ability 1</p>
-        <p>Ability 2</p>
+        {#each data.abilities as a}
+            <p>{formatText(a.ability.name)}</p>
+        {/each}
     </div>
 </div>
 
@@ -14,6 +25,7 @@
 
     #header {
         font-size: calc(var(--header-font) - 0.3rem);
+        font-weight: bold;
     }
 
     #pokemon-abilities {

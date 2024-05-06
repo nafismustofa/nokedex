@@ -1,10 +1,12 @@
 <script>
     import Card from "$lib/card.svelte";
+    import Search from "../lib/search.svelte";
 </script>
 
 <main>
     <div id="container">
         <Card/>
+        <Search/>
     </div>
 </main>
 

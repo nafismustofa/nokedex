@@ -1,6 +1,16 @@
-<div id="sprite">
-    <div id="circle"></div>
-    <img alt="pokemon sprite" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"/>
+<script>
+    import { pokemon_data } from "$lib/fetchData.js";
+
+    let data;
+
+    pokemon_data.subscribe(value => {
+        data =  value;
+    });
+</script>
+
+<div id="sprite" style="background-color: var(--{data.types[0].type.name});">
+    <div id="circle" style="background-color: var(--{data.types[0].type.name});"></div>
+    <img alt="pokemon sprite" src={data.sprites.other["official-artwork"].front_default}/>
 </div>
 
 <style>
@@ -11,8 +21,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
-        background-color: var(--fire);
         
         border-radius: 1rem;
         border-style: solid;
@@ -34,7 +42,6 @@
         width: 17%;
         aspect-ratio: 1/1;
         border-radius: 50%;
-        background-color: var(--fire);
         filter: brightness(0.9);
     }
 

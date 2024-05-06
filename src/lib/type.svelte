@@ -2,7 +2,7 @@
     export let type;
 </script>
 
-<div>
+<div style="background-color: var(--{type.toLowerCase()});">
     <p>{type}</p>
 </div>
 
@@ -11,8 +11,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
-        background-color: var(--fire);
 
         border-radius: 1rem;
         border-style: solid;

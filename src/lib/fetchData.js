@@ -16,3 +16,4 @@ export async function fetchData(pokemon_name) {
         console.log(error);
     }
 }
+
