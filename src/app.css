@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "pokemon_font";
+    src: url("/fonts/pokemon_font.woff2");
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+p {
+    font-family: "pokemon_font";
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --electric: #F6E652;
+    --fire: #FF9441;
+    --water: #8BC5CD;
+    --grass: #A4D541;
+}
