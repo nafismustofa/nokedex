@@ -1,21 +1,27 @@
 <script>
-    import Sprite from "$lib//sprite.svelte";
-    import Abilities from "./abilities.svelte";
-    import HorizontalLine from "./horizontalLine.svelte";
-    import Stats from "./stats.svelte";
-    import Title from "./title.svelte";
+    import Sprite from "$lib/sprite.svelte";
+    import Abilities from "$lib/abilities.svelte";
+    import HorizontalLine from "$lib/horizontalLine.svelte";
+    import Stats from "$lib/stats.svelte";
+    import Title from "$lib/title.svelte";
+    import Error from "$lib/error.svelte";
+    import Nokedex from "$lib/nokedex.svelte";
 
     import { pokemon_data } from "$lib/fetchData.js";
-
-    let data;
     
+    let data;
+
     pokemon_data.subscribe(value => {
         data =  value;
     });
 </script>
 
 <div id="card">
-    {#if data != null}
+    {#if data == null}
+        <Nokedex/>
+    {:else if data == "error"}
+        <Error/>
+    {:else}
         <Sprite/>
 
         <div id="info">

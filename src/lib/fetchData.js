@@ -7,7 +7,8 @@ export async function fetchData(pokemon_name) {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon_name.toLowerCase()}`);
         
         if (!response.ok) {
-            throw new Error(`Pokemon named '${pokemon_name}' not found.`);
+            pokemon_data.set("error");
+            throw new Error("Pokemon not found.");
         }
 
         pokemon_data.set(await response.json());

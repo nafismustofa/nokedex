@@ -1,13 +1,13 @@
 <script>
     import Card from "$lib/card.svelte";
-    import Search from "../lib/search.svelte";
+    import Search from "$lib/search.svelte";
 </script>
 
 <main>
     <div id="container">
         <Card/>
         <Search/>
-        <p id="credit">made with ❤ by nafismustofa</p>
+        <p id="credit">made with &lt;3 by nafismustofa</p>
     </div>
 </main>
 
