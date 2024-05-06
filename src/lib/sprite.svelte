@@ -41,12 +41,17 @@
 
     @media only screen and (max-width: 40em) {
         #sprite {
-            width: 80%;
-            height: 45%;
+            width: 85%;
+            height: 30%;
         }
 
         #sprite > #circle {
             width: 37%;
+        }
+
+        #sprite > img {
+            width: 75%;
+            filter: drop-shadow(5px 5px 0px black);
         }
     }
 </style>

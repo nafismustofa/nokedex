@@ -1,5 +1,5 @@
 <script>
-    
+
 </script>
 
 <div id="search">
@@ -57,9 +57,15 @@
 
     #search_button > img {
         width: 1.2rem;
+        filter: invert() drop-shadow(1px 2px 0 black);
+    }
+
+    #search_button:hover {
+        transform: scale(1.1);
     }
 
     #search_button:active {
-        transform: scale(0.9);
+        transform: scale(1);
+        filter: brightness(0.8);
     }
 </style>

@@ -37,7 +37,7 @@
     }
 
     #name {
-        font-size: var(--heading-font);
+        font-size: var(--header-font);
         font-weight: bold;
     }
 

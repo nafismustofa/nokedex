@@ -1,6 +1,9 @@
 <script>
     import Sprite from "$lib//sprite.svelte";
+    import Abilities from "./abilities.svelte";
+    import HorizontalLine from "./horizontalLine.svelte";
     import Search from "./search.svelte";
+    import Stats from "./stats.svelte";
     import Title from "./title.svelte";
 </script>
 
@@ -9,9 +12,11 @@
 
     <div id="info">
         <Title/>
-        <div id="stats">
-            <p>hp 100</p>
-        </div>
+        <HorizontalLine/>
+        <Stats/>
+        <HorizontalLine/>
+        <Abilities/>
+        <HorizontalLine/>
         <Search/>
     </div>
 </div>
