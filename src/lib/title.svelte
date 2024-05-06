@@ -1,6 +1,5 @@
 <script>
     import Type from "./type.svelte";
-    import VerticalLine from "./verticalLine.svelte";
 
     import { pokemon_data } from "$lib/fetchData.js";
     import { formatText } from "$lib/formatText.js";
@@ -18,8 +17,6 @@
         <p id="id">#{data.id}</p>
     </div>
 
-    <VerticalLine />
-
     <div id="type">
         {#each data.types as t}
             <Type type={formatText(t.type.name)}/>
@@ -33,6 +30,7 @@
         width: 100%;
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
 
     #pokemon {

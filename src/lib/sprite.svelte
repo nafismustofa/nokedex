@@ -57,7 +57,7 @@
         }
 
         #sprite > img {
-            width: 75%;
+            width: 65%;
             filter: drop-shadow(5px 5px 0px black);
         }
     }
