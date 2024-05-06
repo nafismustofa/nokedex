@@ -1,5 +1,6 @@
 <script>
     import Sprite from "$lib//sprite.svelte";
+    import Search from "./search.svelte";
     import Title from "./title.svelte";
 </script>
 
@@ -11,6 +12,7 @@
         <div id="stats">
             <p>hp 100</p>
         </div>
+        <Search/>
     </div>
 </div>
 
