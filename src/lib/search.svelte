@@ -1,10 +1,16 @@
 <script>
     import { fetchData } from "$lib/fetchData.js";
     let pokemon_name;
+
+    function keyDetect(e) {
+        if (e.key == "Enter") {
+            fetchData(pokemon_name.value);
+        }
+    }
 </script>
 
 <div id="search">
-    <input id="search_bar" type="text" placeholder="Enter Pokemon name..." bind:this={pokemon_name}/>
+    <input id="search_bar" type="text" placeholder="Enter Pokemon name..." bind:this={pokemon_name} on:keydown={keyDetect}/>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <div id="search_button" on:click={fetchData(pokemon_name.value)}>
