@@ -36,4 +36,9 @@
         opacity: 0.3;
     }
     
+    @media only screen and (max-width: 40em) {
+        #credit {
+            top: calc(100dvh - 1.2rem);
+        }
+}
 </style>
