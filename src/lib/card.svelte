@@ -1,13 +1,16 @@
 <script>
     import Sprite from "$lib/sprite.svelte";
-    import Abilities from "$lib/abilities.svelte";
-    import HorizontalLine from "$lib/horizontalLine.svelte";
+    import Abilities from "$lib/abilities.svelte"
     import Stats from "$lib/stats.svelte";
     import Title from "$lib/title.svelte";
     import Error from "$lib/error.svelte";
     import Nokedex from "$lib/nokedex.svelte";
     import Loading from "$lib/loading.svelte";
+    import Evolution from "./evolution.svelte";
+
+    
     import { pokemon_data, loading } from "$lib/fetchData.js";
+  
     
     let data;
     let load_data;
@@ -35,11 +38,12 @@
 
         <div id="info">
             <Title/>
-            <HorizontalLine/>
+            <hr>
             <Stats/>
-            <HorizontalLine/>
+            <hr>
             <Abilities/>
-            <HorizontalLine/>
+            <hr>
+            <Evolution/>
         </div>
     {/if}
     {/if}
@@ -74,6 +78,13 @@
         margin: 1rem;
     }
 
+    hr {
+        width: 100%;
+        border-width: 2px;
+        border-style: solid;
+        margin: 0.8rem;
+    }
+
     @media only screen and (max-width: 40em) {
         #card {
             width: 80dvw;
@@ -87,6 +98,10 @@
             width: 90%;
             height: 45%;
             margin: 0;
+        }
+
+        hr {
+            margin: 0.5rem;
         }
     }
 </style>
