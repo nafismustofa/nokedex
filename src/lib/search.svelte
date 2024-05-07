@@ -1,5 +1,5 @@
 <script>
-    import { fetchData } from "$lib/fetchData.js";
+    import { fetchData, fetchRandomData } from "$lib/fetchData.js";
     let pokemon_name;
 
     function keyDetect(e) {
@@ -13,8 +13,14 @@
     <input id="search_bar" type="text" placeholder="Enter Pokemon name..." bind:this={pokemon_name} on:keydown={keyDetect}/>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div id="search_button" on:click={fetchData(pokemon_name.value)}>
-        <img src="/icons/search.svg" alt="serach"/>
+    <div class="button" on:click={fetchData(pokemon_name.value)}>
+        <img src="/icons/search.svg" alt="search"/>
+    </div>
+
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div class="button" on:click={fetchRandomData}>
+        <img src="/icons/dice.svg" alt="random"/>
     </div>
 </div>
 
@@ -45,7 +51,7 @@
         text-align: center;
     }
 
-    #search_button {
+    .button {
         width: 2rem;
         height: 2rem;
 
@@ -65,17 +71,23 @@
         margin: 0.5rem;
     }
 
-    #search_button > img {
+    .button > img {
         width: 1.2rem;
         filter: invert() drop-shadow(1px 2px 0 black);
     }
 
-    #search_button:hover {
+    .button:hover {
         transform: scale(1.1);
     }
 
-    #search_button:active {
+    .button:active {
         transform: scale(1);
         filter: brightness(0.8);
+    }
+
+    @media only screen and (max-width: 40em) {
+        #search_bar {
+            width: 50%;
+        }
     }
 </style>

@@ -6,17 +6,26 @@
     import Title from "$lib/title.svelte";
     import Error from "$lib/error.svelte";
     import Nokedex from "$lib/nokedex.svelte";
-
-    import { pokemon_data } from "$lib/fetchData.js";
+    import Loading from "$lib/loading.svelte";
+    import { pokemon_data, loading } from "$lib/fetchData.js";
     
     let data;
+    let load_data;
 
     pokemon_data.subscribe(value => {
         data =  value;
     });
+
+    loading.subscribe(value => {
+        load_data = value;
+    });
+
 </script>
 
 <div id="card">
+    {#if load_data == true}
+        <Loading/>
+    {:else}
     {#if data == null}
         <Nokedex/>
     {:else if data == "error"}
@@ -32,6 +41,7 @@
             <Abilities/>
             <HorizontalLine/>
         </div>
+    {/if}
     {/if}
 </div>
 
