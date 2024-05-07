@@ -8,6 +8,8 @@ body {
     padding: 0;
     overflow-y: hidden;
     user-select: none;
+
+    background-color: #FAF8ED;
 }
 
 p {
