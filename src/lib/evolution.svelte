@@ -19,7 +19,8 @@
 <div id="evolution">
     <p id="header">Evolution</p>
 
-    <div id="evolution-chain">
+    <!-- <div id="evolution-chain" style={ev.length < 3 ? 'overflow-y: hidden;' : ''}> -->
+    <div id="evolution-chain" style={`overflow-y: ${ev.length <= 3 ? "hidden" : "scroll"}; grid-template-columns: ${ev.length == 2 ? "auto auto": ev.length == 1 ? "auto" : ""}; `}>
         {#each ev as e}
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -65,7 +66,6 @@
         margin-block: 0.5rem;
 
         height: 5rem;
-        overflow-y: scroll;
         overflow-x: hidden;
     }
 

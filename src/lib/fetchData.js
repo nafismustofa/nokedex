@@ -14,6 +14,7 @@ export async function fetchData(pokemon_name) {
             
             if (!response.ok) {
                 pokemon_data.set("error");
+                loading.set(false);
                 throw new Error("Pokemon not found.");
             }
 
