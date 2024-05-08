@@ -71,6 +71,8 @@
         margin: 0.5rem;
 
         transition: all 0.15s;
+
+        cursor: pointer;
     }
 
     .button > img {

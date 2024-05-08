@@ -78,6 +78,8 @@
         margin: 0.4rem;
 
         transition: all 0.15s;
+
+        cursor: pointer;
     }
 
     #switch img {
