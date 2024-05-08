@@ -15,8 +15,8 @@
 <div id="about">
     <p id="header">About</p>
 
-    <p id="height">Height: {Number(data.height/10)} m</p>
-    <p id="weight">Weight: {Number(data.weight/10)} kg</p>
+    <p id="height">Height: {data.height/10} m</p>
+    <p id="weight">Weight: {data.weight/10} kg</p>
 
     <p id="description">{des[Math.floor(Math.random() * des.length)]}</p>
 </div>
