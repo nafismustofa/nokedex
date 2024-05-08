@@ -77,7 +77,7 @@
 
         width: 45%;
         height: 90%;
-        margin: 1rem;
+        margin: 1.7rem;
     }
 
     hr {

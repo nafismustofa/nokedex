@@ -13,7 +13,7 @@
 </script>
 
 <div id="sprite" style="background-color: var(--{data.types[0].type.name});">
-    <div id="image_container" style={`display: ${checked ? "none" : ""}`}>
+    <div id="image_container" style={`display: ${checked ? "none" : ""};`}>
         <div id="circle" style="background-color: var(--{data.types[0].type.name});"></div>
         <img alt="pokemon sprite" src={data.sprites.other["official-artwork"].front_default}/>
     </div>
@@ -42,7 +42,7 @@
         border-color: black;
         border-width: 3.5px;
 
-        margin: 1.5rem;
+        margin: 1rem;
 
         box-shadow: 5px 5px 0px black;
 
