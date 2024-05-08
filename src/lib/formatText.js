@@ -12,6 +12,7 @@ export function formatText(text) {
 
 export function formatTextReverse(text) {
     text = text.toLowerCase();
+    
     if (text.includes(" ")) {
         text = text.replace(/ /g, '-');
     }
@@ -19,5 +20,12 @@ export function formatTextReverse(text) {
         text = text.replace(/./g, '');
     }
 
+    return text;
+}
+
+export function removeSpecial(text) {
+    if (text.includes("")) {
+        text = text.replace(//g, " ");
+    }
     return text;
 }

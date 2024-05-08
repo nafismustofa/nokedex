@@ -66,6 +66,8 @@
         border-width: 3.5px;
 
         box-shadow: 5px 5px 0px black;
+
+        padding: 0.5rem;
     }
 
     #info {

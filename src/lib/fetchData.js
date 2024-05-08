@@ -1,8 +1,9 @@
 import { writable } from "svelte/store";
-import { formatTextReverse } from "$lib/formatText";
+import { removeSpecial, formatTextReverse } from "$lib/formatText";
 
 export const pokemon_data = writable(null);
 export const evolution_data = writable([]);
+export const description = writable([]);
 export const loading = writable(false);
 
 export async function fetchData(pokemon_name) {
@@ -20,9 +21,9 @@ export async function fetchData(pokemon_name) {
 
             const data = await response.json();
 
-            pokemon_data.set(data);
-
             fetchEvolution(data.name);
+            fetchDescription(data.id);
+            pokemon_data.set(data);
     
         } catch (error) {
             console.log(error);
@@ -37,10 +38,10 @@ export async function fetchRandomData() {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 1025)}`)
 
         const data = await response.json();
-            
-        pokemon_data.set(data);
 
         fetchEvolution(data.name);
+        fetchDescription(data.id);
+        pokemon_data.set(data);
 
     } catch (error) {
         console.log(error);
@@ -60,7 +61,7 @@ async function fetchEvolution(name) {
 
         extractEvolutions(ev_data.chain, names);
 
-        for( let i = 0; i < names.length; i++) {
+        for(let i = 0; i < names.length; i++) {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${names[i]}`);
             datas.push(await response.json());
         }
@@ -72,6 +73,21 @@ async function fetchEvolution(name) {
     }
 
     loading.set(false);
+}
+
+async function fetchDescription(id) {
+    let arr = [];
+
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+    const data = await response.json();
+
+    for(let i = 0; i < Object.keys(data.flavor_text_entries).length; i++) {
+        if (data.flavor_text_entries[i].language.name == "en") {
+            arr.push(removeSpecial(data.flavor_text_entries[i].flavor_text));
+        }
+    }
+
+    description.set(arr);
 }
 
 function extractEvolutions(chain, arr) {

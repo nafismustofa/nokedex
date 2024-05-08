@@ -29,16 +29,10 @@
     }
 
     #credit {
-        position: absolute;
+        margin: 0;
+        padding: 0;
         width: fit-content;
         font-size: var(--small-font);
-        top: calc(100dvh - 3rem);
         opacity: 0.3;
     }
-    
-    @media only screen and (max-width: 40em) {
-        #credit {
-            top: calc(100dvh - 1.2rem);
-        }
-}
 </style>
