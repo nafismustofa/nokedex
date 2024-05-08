@@ -13,13 +13,13 @@
     <input id="search_bar" type="text" placeholder="Enter Pokemon name or ID..." bind:this={pokemon_name} on:keydown={keyDetect}/>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class="button" on:click={fetchData(pokemon_name.value)}>
+    <div class="button" title="Search Pokemon" on:click={fetchData(pokemon_name.value)}>
         <img src="/icons/search.svg" alt="search"/>
     </div>
 
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <!-- svelte-ignore a11y-no-static-element-interactions -->
-    <div class="button" on:click={fetchRandomData}>
+    <div class="button" title="Get random Pokemon" on:click={fetchRandomData}>
         <img src="/icons/dice.svg" alt="random"/>
     </div>
 </div>

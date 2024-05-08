@@ -24,7 +24,7 @@
         {#each ev as e}
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <!-- svelte-ignore a11y-no-static-element-interactions -->
-            <div id="gen" on:click={fetchData(e.name)}>
+            <div id="gen" on:click={fetchData(e.name)} title="View {formatText(e.name)}">
                 <div id="circle" style="background-color: var(--{data.types[0].type.name});">
                     <img src={e.sprites.front_default} alt={e.name}/>
                 </div>

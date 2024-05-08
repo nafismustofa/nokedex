@@ -25,7 +25,7 @@
     <div id="switch">
         <input id="check" type="checkbox" bind:checked={checked}/>
         <label for="check">
-            <div>
+            <div title="More info">
                 <img alt="about" src="/icons/about.svg"/>
             </div>
         </label>
