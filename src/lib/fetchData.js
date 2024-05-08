@@ -76,18 +76,23 @@ async function fetchEvolution(name) {
 }
 
 async function fetchDescription(id) {
-    let arr = [];
+    try {
+        let arr = [];
 
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
-    const data = await response.json();
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+        const data = await response.json();
 
-    for(let i = 0; i < Object.keys(data.flavor_text_entries).length; i++) {
-        if (data.flavor_text_entries[i].language.name == "en") {
-            arr.push(removeSpecial(data.flavor_text_entries[i].flavor_text));
+        for(let i = 0; i < Object.keys(data.flavor_text_entries).length; i++) {
+            if (data.flavor_text_entries[i].language.name == "en") {
+                arr.push(removeSpecial(data.flavor_text_entries[i].flavor_text));
+            }
         }
-    }
 
-    description.set(arr);
+        description.set(arr);
+
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 function extractEvolutions(chain, arr) {
