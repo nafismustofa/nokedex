@@ -7,7 +7,7 @@
     <div id="container">
         <Card/>
         <Search/>
-        <p id="credit">made with &lt;3 by nafismustofa</p>
+        <p id="credit">made with &lt;3 by <a href="https://nafismustofa.netlify.app" target="_blank">nafismustofa</a></p>
     </div>
 </main>
 
@@ -33,6 +33,16 @@
         padding: 0;
         width: fit-content;
         font-size: var(--small-font);
-        opacity: 0.3;
+        opacity: 0.4;
+    }
+
+    #credit > a {
+        color: black;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    #credit > a:hover {
+        text-decoration: underline;
     }
 </style>
