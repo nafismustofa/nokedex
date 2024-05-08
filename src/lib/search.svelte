@@ -69,6 +69,8 @@
         box-shadow: 3px 3px 0 black;
 
         margin: 0.5rem;
+
+        transition: all 0.15s;
     }
 
     .button > img {

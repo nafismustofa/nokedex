@@ -76,6 +76,8 @@
         align-items: center;
 
         margin: 0.4rem;
+
+        transition: all 0.15s;
     }
 
     #switch img {

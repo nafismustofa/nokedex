@@ -64,6 +64,7 @@
         grid-template-columns: auto auto auto;
         gap: 0.5rem;
         margin-block: 0.5rem;
+        justify-content: space-between;
 
         height: 5rem;
         overflow-x: hidden;
@@ -81,6 +82,9 @@
         justify-content: center;
         align-items: center;
         margin: 0.2rem;
+        width: fit-content;
+        
+        transition: all 0.15s;
     }
 
     #gen > p {
