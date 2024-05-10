@@ -7,31 +7,17 @@
     import Nokedex from "$lib/nokedex.svelte";
     import Loading from "$lib/loading.svelte";
     import Evolution from "./evolution.svelte";
-
     
     import { pokemon_data, loading } from "$lib/fetchData.js";
-  
-    
-    let data;
-    let load_data;
-
-    pokemon_data.subscribe(value => {
-        data =  value;
-    });
-
-    loading.subscribe(value => {
-        load_data = value;
-    });
-
 </script>
 
 <div id="card">
-    {#if load_data == true}
+    {#if $loading == true}
         <Loading/>
     {:else}
-    {#if data == null}
+    {#if $pokemon_data == null}
         <Nokedex/>
-    {:else if data == "error"}
+    {:else if $pokemon_data == "error"}
         <Error/>
     {:else}
         <Sprite/>

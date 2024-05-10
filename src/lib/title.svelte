@@ -4,21 +4,16 @@
     import { pokemon_data } from "$lib/fetchData.js";
     import { formatText } from "$lib/formatText.js";
 
-    let data;
-    
-    pokemon_data.subscribe(value => {
-        data =  value;
-    });
 </script>
 
 <div id="title">
     <div id="pokemon">
-        <p id="name">{formatText(data.name)}</p>
-        <p id="id">#{data.id}</p>
+        <p id="name">{formatText($pokemon_data.name)}</p>
+        <p id="id">#{$pokemon_data.id}</p>
     </div>
 
     <div id="type">
-        {#each data.types as t}
+        {#each $pokemon_data.types as t}
             <Type type={formatText(t.type.name)}/>
         {/each}
     </div>

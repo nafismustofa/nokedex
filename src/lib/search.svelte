@@ -1,5 +1,6 @@
 <script>
     import { fetchData, fetchRandomData } from "$lib/fetchData.js";
+    
     let pokemon_name;
 
     function keyDetect(e) {

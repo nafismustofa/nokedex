@@ -1,24 +1,14 @@
 <script>
     import { pokemon_data, description } from "$lib/fetchData.js";
-
-    let data;
-    let des;
-
-    pokemon_data.subscribe(value => {
-        data =  value;
-    });
-    description.subscribe(value => {
-        des = value;
-    })
 </script>
 
 <div id="about">
     <p id="header">About</p>
 
-    <p id="height">Height: {data.height/10} m</p>
-    <p id="weight">Weight: {data.weight/10} kg</p>
+    <p id="height">Height: {$pokemon_data.height/10} m</p>
+    <p id="weight">Weight: {$pokemon_data.weight/10} kg</p>
 
-    <p id="description">{des[Math.floor(Math.random() * des.length)]}</p>
+    <p id="description">{$description[Math.floor(Math.random() * $description.length)]}</p>
 </div>
 
 <style>

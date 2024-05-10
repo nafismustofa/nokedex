@@ -2,20 +2,14 @@
     import { pokemon_data } from "$lib/fetchData.js";
     import About from "$lib/about.svelte";
 
-    let data;
-
-    pokemon_data.subscribe(value => {
-        data =  value;
-    });
-
     let checked = false;
 
 </script>
 
-<div id="sprite" style="background-color: var(--{data.types[0].type.name});">
+<div id="sprite" style="background-color: var(--{$pokemon_data.types[0].type.name});">
     <div id="image_container" style={`display: ${checked ? "none" : ""};`}>
-        <div id="circle" style="background-color: var(--{data.types[0].type.name});"></div>
-        <img alt="pokemon sprite" src={data.sprites.other["official-artwork"].front_default}/>
+        <div id="circle" style="background-color: var(--{$pokemon_data.types[0].type.name});"></div>
+        <img alt="pokemon sprite" src={$pokemon_data.sprites.other["official-artwork"].front_default}/>
     </div>
 
     <div id="about_container" style={`display: ${checked ? "" : "none"}`}>

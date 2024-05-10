@@ -2,30 +2,18 @@
     import { pokemon_data, evolution_data } from "$lib/fetchData.js";
     import { fetchData } from "$lib/fetchData.js";
     import { formatText } from "$lib/formatText.js";
-
-    let data;
-    let ev;
-
-    pokemon_data.subscribe(value => {
-        data =  value;
-    });
-
-    evolution_data.subscribe(value => {
-        ev = value;
-    });
-
 </script>
 
 <div id="evolution">
     <p id="header">Evolution</p>
 
     <!-- <div id="evolution-chain" style={ev.length < 3 ? 'overflow-y: hidden;' : ''}> -->
-    <div id="evolution-chain" style={`overflow-y: ${ev.length <= 3 ? "hidden" : "scroll"}; grid-template-columns: ${ev.length == 2 ? "auto auto": ev.length == 1 ? "auto" : ""}; `}>
-        {#each ev as e}
+    <div id="evolution-chain" style={`overflow-y: ${$evolution_data.length <= 3 ? "hidden" : "scroll"}; grid-template-columns: ${$evolution_data.length == 2 ? "auto auto": $evolution_data.length == 1 ? "auto" : ""}; `}>
+        {#each $evolution_data as e}
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <!-- svelte-ignore a11y-no-static-element-interactions -->
             <div id="gen" on:click={fetchData(e.name)} title="View {formatText(e.name)}">
-                <div id="circle" style="background-color: var(--{data.types[0].type.name});">
+                <div id="circle" style="background-color: var(--{$pokemon_data.types[0].type.name});">
                     <img src={e.sprites.front_default} alt={e.name}/>
                 </div>
                 <p>{formatText(e.name)}</p>
