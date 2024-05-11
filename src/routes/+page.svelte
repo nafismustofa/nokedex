@@ -7,7 +7,7 @@
     <div id="container">
         <Card/>
         <Search/>
-        <p id="credit">made with &lt;3 by <a href="https://nafismustofa.netlify.app" target="_blank">nafismustofa</a></p>
+        <p id="credit">made with &lt;3 by <a href="https://nafismustofa.vercel.app" target="_blank">nafismustofa</a></p>
     </div>
 </main>
 
